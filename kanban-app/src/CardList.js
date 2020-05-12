@@ -8,13 +8,14 @@ export default class CardList extends React.Component {
         return (
             <div className={styles.CardList}>
                 <h1>{ this.props.title }</h1>
-                { this.props.cards.map(card => <Card
+                { this.props.cards && this.props.cards.map(card => <Card
                     key={ card.id }
                     id={ card.id }
                     title={ card.title }
                     status = { card.status }
                     description={ card.description }
                     tasks={ card.tasks }
+                    taskCallbacks={ this.props.taskCallbacks }
                 />) }
             </div>
         )
@@ -23,5 +24,5 @@ export default class CardList extends React.Component {
 
 CardList.propTypes = {
     title: PropTypes.string.isRequired,
-    cards: PropTypes.arrayOf(PropTypes.object).isRequired
+    cards: PropTypes.arrayOf(PropTypes.object)
 }

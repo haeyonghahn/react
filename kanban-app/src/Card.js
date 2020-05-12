@@ -31,7 +31,8 @@ export default class Card extends React.Component {
                     <TaskList 
                         key = { this.props.id }
                         cardId = { this.props.id } 
-                        tasks = { this.props.tasks } />
+                        tasks = { this.props.tasks } 
+                        taskCallbacks={ this.props.taskCallbacks }/>
                 </div> }
           </div>
         )
